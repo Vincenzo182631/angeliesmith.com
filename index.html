@@ -1,0 +1,764 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>SEO Audit — angeliesmith.com</title><style>:root{--bg:#faf9f6;--card:#fff;--ink:#1c1b19;--mut:#6b6860;--line:#e6e2d9;--acc:#9a5b3c;--th:#f3f0e9}
+@media(prefers-color-scheme:dark){:root{--bg:#161513;--card:#1f1e1b;--ink:#ece9e2;--mut:#a39f95;--line:#34322d;--acc:#e0a07c;--th:#26241f}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
+main{max-width:1080px;margin:0 auto;padding:40px 16px 80px}
+h1{font:600 clamp(28px,5vw,42px)/1.15 Georgia,"Times New Roman",serif;margin:0 0 8px;letter-spacing:-.01em}
+h1+p{color:var(--mut);font-size:14px;margin:0 0 20px}h1+p+p{font-size:19px;line-height:1.5;max-width:70ch}
+h2{font:600 26px/1.2 Georgia,serif;margin:56px 0 12px;padding-top:20px;border-top:1px solid var(--line);scroll-margin-top:64px}
+h3{font-size:17px;margin:28px 0 8px}p,li{max-width:76ch}a{color:var(--acc)}
+nav{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:18px;overflow-x:auto;padding:12px 16px;font-size:13px;white-space:nowrap}
+nav a{color:var(--mut);text-decoration:none}nav a:hover{color:var(--acc)}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;margin:14px 0 22px}
+table{border-collapse:collapse;width:100%;min-width:680px;font-size:14px;line-height:1.45}
+th{background:var(--th);text-align:left;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:0}
+code{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--th);padding:1px 5px;border-radius:4px;word-break:break-word}
+.b{display:inline-block;padding:2px 9px;border-radius:99px;font-size:12px;font-weight:600;white-space:nowrap}
+.crit{background:#fbe3e1;color:#9c1f17}.high{background:#fdebd8;color:#96500c}.med{background:#fbf2cf;color:#75590a}.low{background:#eceae4;color:#55524b}.pass{background:#dff3e2;color:#1d6a31}.warn{background:#fdebd8;color:#96500c}
+@media(prefers-color-scheme:dark){.crit{background:#4a1d1a;color:#ffb4ad}.high,.warn{background:#48300f;color:#ffcf94}.med{background:#40360f;color:#f1dc85}.low{background:#33312c;color:#c9c5bb}.pass{background:#17381f;color:#9fe0ae}}
+footer{color:var(--mut);font-size:13px;margin-top:56px;border-top:1px solid var(--line);padding-top:16px}</style></head><body><nav><a href="#executive-summary">Executive summary</a><a href="#prioritized-action-plan">Prioritized action plan</a><a href="#on-page-issues">On-page issues</a><a href="#technical-seo-checklist">Technical SEO checklist</a><a href="#keyword-opportunities">Keyword opportunities</a><a href="#content-gaps">Content gaps</a><a href="#competitor-comparison">Competitor comparison</a><a href="#method-and-limits">Method and limits</a></nav><main><h1>SEO Audit — angeliesmith.com</h1>
+<p>Nov 16, 2026</p>
+<p>angeliesmith.com has a clean crawl base but needs work: no product page carries Product schema, the blog has been idle since March 2025, and duplicate archives dilute a small 81-URL site.</p>
+<h2 id="executive-summary">Executive summary</h2>
+<p><strong>Overall: needs work.</strong> The foundation is sound, but the store is invisible to rich results and its content has stalled.</p>
+<p><strong>Biggest strength:</strong> crawl hygiene. All 81 sitemap URLs resolve over HTTPS with self-referencing canonicals, single-hop redirects, and unique titles and descriptions on every product page. The site also holds a real niche (Procell microchanneling) where competitors are weak.</p>
+<p><strong>Top 3 priorities:</strong></p>
+<ol>
+<li><strong>Add Product schema to the 29 live product pages.</strong> None outputs Product, Offer or rating markup, so Google cannot show price, stock or stars, and the products are not eligible for free merchant listings.</li>
+<li><strong>Remove duplicate and broken URLs.</strong> Nine tag archives and four brand archives duplicate the product categories, one sitemap product URL redirects to a PNG image, and blog posts contain three internal 404s plus old Shopify links.</li>
+<li><strong>Restart content around microchanneling.</strong> The blog has five posts, the newest from 1 March 2025, with no Article schema and the author shown as &quot;mrgreat&quot;. The homepage H1 still reads &quot;Best Skin Care Products of 2025&quot;.</li>
+</ol>
+<p>Ahrefs Domain Rating is 31. Ranking, traffic and search-volume figures are not in this audit because the connected Semrush, Ahrefs and SEO Gets accounts had no usable quota (see Method and limits).</p>
+<h2 id="prioritized-action-plan">Prioritized action plan</h2>
+<h3>Quick wins (this week)</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Action</th>
+<th>Impact</th>
+<th>Effort</th>
+<th>Depends on</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Enable Product structured data (WooCommerce&#39;s built-in output is missing; check the theme or an optimisation plugin stripping it, or turn on Yoast WooCommerce SEO). Validate in Google&#39;s Rich Results Test.</td>
+<td><span class="b high">High</span></td>
+<td>1–2 h</td>
+<td>WP admin access</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Fix <code>/maree-hair-serum/</code>: it 301s to a PNG file. Restore the product page or remove it from the catalogue and its 15 internal links.</td>
+<td><span class="b high">High</span></td>
+<td>30 min</td>
+<td>—</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Set product tag archives to noindex in Yoast (Search Appearance → Taxonomies). Pick brand archives or product categories as the indexable set and noindex or redirect the other.</td>
+<td><span class="b high">High</span></td>
+<td>30 min</td>
+<td>Decision on brand vs category URLs</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Fix blog links: 3 internal 404s, the dead angeliesmithbeauty.com link, and old <code>/products/</code> and <code>/collections/</code> Shopify URLs in 3 posts.</td>
+<td><span class="b med">Medium</span></td>
+<td>1 h</td>
+<td>—</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Rewrite the homepage H1 (drop &quot;2025&quot;) and add alt text to the 30 homepage images without it.</td>
+<td><span class="b med">Medium</span></td>
+<td>1 h</td>
+<td>—</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Set Yoast Site Representation to Organization or Person with logo and social profiles, so Organization schema is output. Rename author &quot;mrgreat&quot; to Angelie Smith with a nurse bio.</td>
+<td><span class="b med">Medium</span></td>
+<td>30 min</td>
+<td>—</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Add titles and descriptions to <code>/prolon-fasting-next-gen/</code>, <code>/policies/*</code> and <code>/category/blog-posts/</code>. Add an H1 to <code>/faq/</code> and change the blog H1 from &quot;Blogs&quot;.</td>
+<td><span class="b med">Medium</span></td>
+<td>1 h</td>
+<td>—</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Fix typos in indexed copy: &quot;Microchanelling&quot;, &quot;Ultra-RichNight&quot;, &quot;MimickingDiet&quot;, &quot;for trusted trust&quot;; align <code>/skin-brightening-system/</code> title (Normal to Dry) with its H1 (Normal to Oily).</td>
+<td><span class="b low">Low</span></td>
+<td>30 min</td>
+<td>—</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Add <code>rel=&quot;sponsored nofollow&quot;</code> to the 19 of 32 affiliate and partner links that lack it (Amazon, Awin, Prolon, L-Nutra).</td>
+<td><span class="b med">Medium</span></td>
+<td>30 min</td>
+<td>—</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Compress the three homepage PNGs of 0.8–1.6 MB each to WebP under 150 KB.</td>
+<td><span class="b med">Medium</span></td>
+<td>30 min</td>
+<td>—</td>
+</tr>
+</tbody></table></div>
+<h3>Strategic investments (this quarter)</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Action</th>
+<th>Impact</th>
+<th>Effort</th>
+<th>Depends on</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Build a microchanneling topic cluster: one pillar guide plus 8–10 supporting posts (see Content gaps), each linking to the matching Procell product.</td>
+<td><span class="b high">High</span></td>
+<td>Multi-week, 2 posts a month</td>
+<td>Author bio and Article schema live</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Turn on full-page caching at Hostinger CDN (pages are served <code>no-store</code> and uncached today) and load Stripe, PayPal and hCaptcha only at checkout.</td>
+<td><span class="b high">High</span></td>
+<td>1–2 days</td>
+<td>Developer or host support</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Rewrite product copy with first-hand nurse commentary, usage photos and FAQs. Collect reviews: products show 0–1 reviews.</td>
+<td><span class="b high">High</span></td>
+<td>Multi-week</td>
+<td>Product schema live</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Strengthen trust signals for health content: link license and certifications from every post, cite sources, add FAQPage markup to <code>/faq/</code>.</td>
+<td><span class="b med">Medium</span></td>
+<td>2–3 days</td>
+<td>—</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Earn links through the professional angle: Procell provider directories, esthetician and nursing publications, guest features.</td>
+<td><span class="b med">Medium</span></td>
+<td>Ongoing</td>
+<td>Cluster content published</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Clarify the brand. The site calls itself &quot;Beauty Health&quot;, a generic name also used by a large listed skincare company, while the domain and all trust content say Angelie Smith.</td>
+<td><span class="b med">Medium</span></td>
+<td>Half day</td>
+<td>Owner decision</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Connect Search Console data (upgrade the site in SEO Gets or add Semrush or Ahrefs units) so rankings and volumes can be measured.</td>
+<td><span class="b med">Medium</span></td>
+<td>1 h</td>
+<td>Account upgrade</td>
+</tr>
+</tbody></table></div>
+<h2 id="on-page-issues">On-page issues</h2>
+<p>Sorted by severity. Every one of the 81 sitemap URLs was fetched and parsed.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Issue</th>
+<th>Severity</th>
+<th>Recommended fix</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>All 29 live product pages (25 sold on-site, 4 Maree affiliate listings)</td>
+<td>No Product, Offer or AggregateRating schema; only WebPage and Breadcrumb are output</td>
+<td><span class="b crit">Critical</span></td>
+<td>Restore WooCommerce Product JSON-LD with price, availability, brand, GTIN and reviews</td>
+</tr>
+<tr>
+<td><code>/maree-hair-serum/</code></td>
+<td>Listed as a product in the sitemap but 301s to <code>/wp-content/uploads/2026/01/maree-hair-serum.png</code>; 15 pages link to it</td>
+<td><span class="b crit">Critical</span></td>
+<td>Rebuild the product page or remove the product and its links</td>
+</tr>
+<tr>
+<td>9 <code>/product-tag/*</code> archives</td>
+<td>Indexable, default &quot;Archives&quot; titles, no descriptions; <code>/product-tag/procell/</code> and <code>/product-tag/procell-therapies/</code> are identical</td>
+<td><span class="b high">High</span></td>
+<td>Noindex all product tags; merge the two Procell tags</td>
+</tr>
+<tr>
+<td><code>/brand/*</code> vs <code>/product-category/*</code></td>
+<td>Four brand archives list the same products as the Obagi, Procell, Prolon and Maree categories and compete for the same keywords</td>
+<td><span class="b high">High</span></td>
+<td>Keep one set indexable; 301 or canonicalise the other</td>
+</tr>
+<tr>
+<td>Homepage</td>
+<td>H1 is &quot;Best Skin Care Products of 2025&quot;; 37 H2s, most of them product names; 30 of 69 images lack alt text</td>
+<td><span class="b high">High</span></td>
+<td>New H1 matching the title&#39;s intent; demote product names to H3; add alt text</td>
+</tr>
+<tr>
+<td>5 blog posts</td>
+<td>No Article schema; author is &quot;mrgreat&quot;; newest post dated 1 Mar 2025</td>
+<td><span class="b high">High</span></td>
+<td>Rename author, add a nurse bio and credentials, enable Article schema, refresh the posts</td>
+</tr>
+<tr>
+<td><code>/best-serum-microchanneling/</code>, <code>/microchanneling-basics/</code></td>
+<td>Links to 3 internal 404s and the dead domain angeliesmithbeauty.com</td>
+<td><span class="b high">High</span></td>
+<td>Point the links at the live product URLs</td>
+</tr>
+<tr>
+<td>3 blog posts, <code>/prolon-fasting-next-gen/</code></td>
+<td>Old Shopify <code>/products/</code> and <code>/collections/</code> links (redirecting) and images hotlinked from cdn.shopify.com</td>
+<td><span class="b med">Medium</span></td>
+<td>Update links; upload the images to WordPress before the old store&#39;s CDN drops them</td>
+</tr>
+<tr>
+<td><code>/prolon-fasting-next-gen/</code></td>
+<td>Linked from all 80 pages, yet has a default title, no description and overlaps the <code>/next-gen-prolon/</code> product</td>
+<td><span class="b med">Medium</span></td>
+<td>Write title and description; differentiate it as a guide or merge into the product</td>
+</tr>
+<tr>
+<td><code>/microchanneling-device/</code></td>
+<td>67 words on a page targeting a commercial B2B query; linked sitewide</td>
+<td><span class="b med">Medium</span></td>
+<td>Expand to 600+ words: specs, training, pricing path, FAQ</td>
+</tr>
+<tr>
+<td><code>/obagi-vitamin-c/</code>, <code>/procell-therapies/</code>, <code>/md-aftercare/</code></td>
+<td>URL does not match the product: Microdermabrasion Polish + Mask, PRO Facial Serum and MD Step 2 respectively</td>
+<td><span class="b med">Medium</span></td>
+<td>Rename slugs with 301s, e.g. <code>/obagi-professional-c-polish-mask/</code>, <code>/procell-pro-facial-serum/</code>, <code>/procell-md-aftercare-step-2/</code></td>
+</tr>
+<tr>
+<td><code>/skin-brightening-system/</code></td>
+<td>Title says &quot;Normal to Dry&quot;, H1 says &quot;Normal to Oily&quot;</td>
+<td><span class="b med">Medium</span></td>
+<td>Make both match the product sold</td>
+</tr>
+<tr>
+<td><code>/faq/</code></td>
+<td>No H1 and no FAQPage schema on 671 words of Q&amp;A</td>
+<td><span class="b med">Medium</span></td>
+<td>Add an H1 and FAQPage markup</td>
+</tr>
+<tr>
+<td><code>/blog/</code>, <code>/category/blog-posts/</code></td>
+<td>H1 is &quot;Blogs&quot; with 52 words; the category archive has no H1 or description and no inbound links</td>
+<td><span class="b med">Medium</span></td>
+<td>Rename the H1, add an intro; noindex the single category archive</td>
+</tr>
+<tr>
+<td>Affiliate links sitewide</td>
+<td>19 of 32 affiliate or partner links lack <code>rel=&quot;sponsored&quot;</code> or <code>nofollow</code></td>
+<td><span class="b med">Medium</span></td>
+<td>Add the attribute and a visible disclosure near the links</td>
+</tr>
+<tr>
+<td><code>/policies/*</code> (4 pages)</td>
+<td>Default titles, no meta descriptions</td>
+<td><span class="b low">Low</span></td>
+<td>Add descriptions or leave; low search value</td>
+</tr>
+<tr>
+<td><code>/about/</code>, <code>/certifications/</code>, <code>/contact/</code></td>
+<td>57–172 words each; certification images have no alt text</td>
+<td><span class="b low">Low</span></td>
+<td>Expand the About page with credentials and experience; add alt text</td>
+</tr>
+<tr>
+<td>Several titles and H1s</td>
+<td>Typos: &quot;Microchanelling&quot;, &quot;Ultra-RichNight&quot;, &quot;MimickingDiet&quot;, &quot;for trusted trust&quot;</td>
+<td><span class="b low">Low</span></td>
+<td>Correct the spelling</td>
+</tr>
+<tr>
+<td>Social tags</td>
+<td><code>og:image</code> is the 812×277 logo on the homepage; <code>og:title</code> differs from the title tag</td>
+<td><span class="b low">Low</span></td>
+<td>Use a 1200×630 share image</td>
+</tr>
+</tbody></table></div>
+<h2 id="technical-seo-checklist">Technical SEO checklist</h2>
+<p>Speed figures are lab measurements from one headless Chromium run emulating a Pixel 7 on a fast connection, not Google field data. Real phones on mobile networks will be slower.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Status</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HTTPS and redirects</td>
+<td><span class="b pass">Pass</span></td>
+<td>HTTP and www both 301 to <code>https://angeliesmith.com/</code> in one hop; no mixed content; CSP upgrades insecure requests. No HSTS header.</td>
+</tr>
+<tr>
+<td>robots.txt</td>
+<td><span class="b pass">Pass</span></td>
+<td>Blocks only WooCommerce logs, uploads, add-to-cart and wp-admin; references the sitemap index</td>
+</tr>
+<tr>
+<td>XML sitemap</td>
+<td><span class="b warn">Warning</span></td>
+<td>Yoast index with 7 child sitemaps, 81 URLs. Includes noindexed <code>/cart/</code>, <code>/checkout/</code>, <code>/my-account/</code> and the <code>/maree-hair-serum/</code> redirect. No page lastmod is newer than 13 Jan 2026.</td>
+</tr>
+<tr>
+<td>Canonical tags</td>
+<td><span class="b pass">Pass</span></td>
+<td>Self-referencing on every indexable page</td>
+</tr>
+<tr>
+<td>Indexation and duplicates</td>
+<td><span class="b crit">Fail</span></td>
+<td>13 thin tag and brand archives duplicate category pages; index coverage itself could not be verified without Search Console</td>
+</tr>
+<tr>
+<td>Structured data</td>
+<td><span class="b crit">Fail</span></td>
+<td>WebPage, WebSite and Breadcrumb only. Missing Product, Organization, Article and FAQPage.</td>
+</tr>
+<tr>
+<td>Broken links</td>
+<td><span class="b warn">Warning</span></td>
+<td>3 internal 404s, 1 dead external domain, 1 product URL redirecting to an image; missing URLs correctly return 404</td>
+</tr>
+<tr>
+<td>Mobile-friendliness</td>
+<td><span class="b pass">Pass</span></td>
+<td>Viewport set, no horizontal scroll at 412 px; 28 links or buttons on the homepage are under 24 px in one dimension</td>
+</tr>
+<tr>
+<td>Server response and caching</td>
+<td><span class="b warn">Warning</span></td>
+<td>Homepage first byte 0.8–1.5 s; other pages 0.2–0.8 s. Responses are <code>no-store</code> and CDN status is DYNAMIC, so HTML is never cached.</td>
+</tr>
+<tr>
+<td>LCP (lab)</td>
+<td><span class="b warn">Warning</span></td>
+<td>Homepage 3.9 s, product page 3.4 s, blog post 0.9 s. Google&#39;s &quot;good&quot; threshold is 2.5 s.</td>
+</tr>
+<tr>
+<td>CLS (lab)</td>
+<td><span class="b pass">Pass</span></td>
+<td>0 on all three templates</td>
+</tr>
+<tr>
+<td>Page weight</td>
+<td><span class="b crit">Fail</span></td>
+<td>Product page: 267 requests and about 23 MB of uncompressed JavaScript, driven by Stripe, PayPal and hCaptcha loading on every product view. Homepage: 117 requests, 3.4 MB of JavaScript.</td>
+</tr>
+<tr>
+<td>Images</td>
+<td><span class="b warn">Warning</span></td>
+<td>Homepage serves three PNGs of 1.6 MB, 1.4 MB and 0.8 MB; the LCP image is a JPEG uploaded from WhatsApp; 28 of 69 homepage images are not lazy-loaded</td>
+</tr>
+<tr>
+<td>Third-party scripts</td>
+<td><span class="b warn">Warning</span></td>
+<td>Omnisend, Pinterest, Google Ads, Tag Manager, Sentry and CodeDrink load on every page</td>
+</tr>
+</tbody></table></div>
+<h2 id="keyword-opportunities">Keyword opportunities</h2>
+<p>Microchanneling and Procell terms are the best opening: the results are held by small clinic sites and low-authority resellers, while Obagi and Prolon head terms are held by brand sites with Domain Rating 70+. Difficulty and opportunity are estimates from who ranks today, not measured volumes; current rankings are unknown without Search Console or a paid rank tool.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Est. difficulty</th>
+<th>Opportunity</th>
+<th>Intent</th>
+<th>Target page or content type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>procell md aftercare serum</td>
+<td><span class="b pass">Easy</span></td>
+<td><span class="b high">High</span></td>
+<td>Transactional</td>
+<td>Product: <code>/procell-md-aftercare/</code></td>
+</tr>
+<tr>
+<td>procell microchanneling aftercare</td>
+<td><span class="b pass">Easy</span></td>
+<td><span class="b high">High</span></td>
+<td>Informational</td>
+<td>New guide linking to Step 1 and Step 2</td>
+</tr>
+<tr>
+<td>what to put on skin after microchanneling</td>
+<td><span class="b pass">Easy</span></td>
+<td><span class="b high">High</span></td>
+<td>Informational</td>
+<td>New post</td>
+</tr>
+<tr>
+<td>procell pro vs md serum</td>
+<td><span class="b pass">Easy</span></td>
+<td><span class="b high">High</span></td>
+<td>Commercial</td>
+<td>Refresh <code>/best-serum-microchanneling/</code></td>
+</tr>
+<tr>
+<td>microchanneling vs microneedling</td>
+<td><span class="b med">Moderate</span></td>
+<td><span class="b high">High</span></td>
+<td>Informational</td>
+<td>Refresh <code>/microchanneling-or-microneedling/</code></td>
+</tr>
+<tr>
+<td>what is microchanneling</td>
+<td><span class="b med">Moderate</span></td>
+<td><span class="b high">High</span></td>
+<td>Informational</td>
+<td>Pillar: rebuild <code>/microchanneling-basics/</code></td>
+</tr>
+<tr>
+<td>how often should you do microchanneling</td>
+<td><span class="b pass">Easy</span></td>
+<td><span class="b high">High</span></td>
+<td>Informational</td>
+<td>New post</td>
+</tr>
+<tr>
+<td>microchanneling for hair loss</td>
+<td><span class="b med">Moderate</span></td>
+<td><span class="b high">High</span></td>
+<td>Informational</td>
+<td>New post linking to <code>/procell-hair-aftercare/</code></td>
+</tr>
+<tr>
+<td>procell microchanneling device for estheticians</td>
+<td><span class="b pass">Easy</span></td>
+<td><span class="b high">High</span></td>
+<td>Commercial (B2B)</td>
+<td>Expand <code>/microchanneling-device/</code></td>
+</tr>
+<tr>
+<td>how to use procell serum at home</td>
+<td><span class="b pass">Easy</span></td>
+<td><span class="b high">High</span></td>
+<td>Informational</td>
+<td>Refresh <code>/how-to-use-procell-serums/</code></td>
+</tr>
+<tr>
+<td>microchanneling before and after</td>
+<td><span class="b med">Moderate</span></td>
+<td><span class="b med">Medium</span></td>
+<td>Informational</td>
+<td>New post with dated result photos</td>
+</tr>
+<tr>
+<td>microchanneling cost</td>
+<td><span class="b med">Moderate</span></td>
+<td><span class="b med">Medium</span></td>
+<td>Informational</td>
+<td>New post</td>
+</tr>
+<tr>
+<td>obagi nu-derm fx how to use (order of steps)</td>
+<td><span class="b med">Moderate</span></td>
+<td><span class="b med">Medium</span></td>
+<td>Informational</td>
+<td>New guide linking to the system kit</td>
+</tr>
+<tr>
+<td>obagi nu-derm normal to dry vs normal to oily</td>
+<td><span class="b pass">Easy</span></td>
+<td><span class="b med">Medium</span></td>
+<td>Commercial</td>
+<td>Comparison post</td>
+</tr>
+<tr>
+<td>obagi professional-c 10 vs 15 vs 20</td>
+<td><span class="b med">Moderate</span></td>
+<td><span class="b med">Medium</span></td>
+<td>Commercial</td>
+<td>Comparison post</td>
+</tr>
+<tr>
+<td>obagi elastiderm eye cream review</td>
+<td><span class="b med">Moderate</span></td>
+<td><span class="b med">Medium</span></td>
+<td>Commercial</td>
+<td>First-hand review on the product page</td>
+</tr>
+<tr>
+<td>prolon 5 day fast what to expect day by day</td>
+<td><span class="b med">Moderate</span></td>
+<td><span class="b med">Medium</span></td>
+<td>Informational</td>
+<td>New guide</td>
+</tr>
+<tr>
+<td>prolon next gen vs original</td>
+<td><span class="b pass">Easy</span></td>
+<td><span class="b med">Medium</span></td>
+<td>Commercial</td>
+<td>Convert <code>/prolon-fasting-next-gen/</code></td>
+</tr>
+<tr>
+<td>prolon reset 5:2 review</td>
+<td><span class="b pass">Easy</span></td>
+<td><span class="b med">Medium</span></td>
+<td>Commercial</td>
+<td>Review on <code>/reset-bundle/</code></td>
+</tr>
+<tr>
+<td>fasting mimicking diet for skin</td>
+<td><span class="b pass">Easy</span></td>
+<td><span class="b med">Medium</span></td>
+<td>Informational</td>
+<td>New post bridging the two niches</td>
+</tr>
+<tr>
+<td>obagi vitamin c serum</td>
+<td><span class="b high">Hard</span></td>
+<td><span class="b low">Low</span></td>
+<td>Transactional</td>
+<td>Product: <code>/vitamin-c/</code></td>
+</tr>
+<tr>
+<td>fasting mimicking diet</td>
+<td><span class="b high">Hard</span></td>
+<td><span class="b low">Low</span></td>
+<td>Informational</td>
+<td>Covered by the Prolon guide</td>
+</tr>
+</tbody></table></div>
+<h2 id="content-gaps">Content gaps</h2>
+<p>The site sells three product lines but publishes on one: all five posts cover microchanneling, and nothing supports the 13 Obagi or 7 Prolon products.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Why it matters</th>
+<th>Format</th>
+<th>Priority</th>
+<th>Effort</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Microchanneling aftercare: day-by-day routine</td>
+<td>Clinic sites rank with short pages; the site sells the exact aftercare products</td>
+<td>Guide</td>
+<td><span class="b high">High</span></td>
+<td>Moderate (half day)</td>
+</tr>
+<tr>
+<td>Microchanneling pillar: what it is, benefits, risks, who it suits</td>
+<td>Anchors the cluster; existing post is 756 words from July 2024</td>
+<td>Pillar page</td>
+<td><span class="b high">High</span></td>
+<td>Substantial</td>
+</tr>
+<tr>
+<td>Refresh the 5 existing posts</td>
+<td>20–28 months old, broken links, no author credentials</td>
+<td>Update</td>
+<td><span class="b high">High</span></td>
+<td>Quick win each (1–2 h)</td>
+</tr>
+<tr>
+<td>Microchanneling for hair regrowth</td>
+<td>A hair-clinic site ranks for the comparison query; the site sells Procell Hair Aftercare</td>
+<td>Blog post</td>
+<td><span class="b high">High</span></td>
+<td><span class="b med">Moderate</span></td>
+</tr>
+<tr>
+<td>Microchanneling device buyer page for professionals</td>
+<td>Decision-stage B2B page is 67 words</td>
+<td>Landing page</td>
+<td><span class="b high">High</span></td>
+<td><span class="b med">Moderate</span></td>
+</tr>
+<tr>
+<td>Obagi Nu-Derm routine: step order, AM and PM, what to expect</td>
+<td>No consideration-stage content for the largest product line</td>
+<td>Guide</td>
+<td><span class="b med">Medium</span></td>
+<td><span class="b med">Moderate</span></td>
+</tr>
+<tr>
+<td>Obagi comparisons: Nu-Derm skin types, Professional-C strengths</td>
+<td>Decision-stage queries with clear buying intent</td>
+<td>Comparison pages</td>
+<td><span class="b med">Medium</span></td>
+<td>Moderate each</td>
+</tr>
+<tr>
+<td>Prolon 5-day fast: day-by-day experience from a nurse</td>
+<td>First-hand experience is the edge over the brand site</td>
+<td>Guide</td>
+<td><span class="b med">Medium</span></td>
+<td><span class="b med">Moderate</span></td>
+</tr>
+<tr>
+<td>Prolon Next Gen vs original, Reset 5:2 explained</td>
+<td>Product launches with little independent coverage</td>
+<td>Comparison page</td>
+<td><span class="b med">Medium</span></td>
+<td>Quick win</td>
+</tr>
+<tr>
+<td>Product FAQs and reviews on each product page</td>
+<td>Products show 0–1 reviews; FAQ content can earn rich results once marked up</td>
+<td>On-page blocks</td>
+<td><span class="b med">Medium</span></td>
+<td>Substantial across the catalogue</td>
+</tr>
+<tr>
+<td>Video transcripts on <code>/videos/</code></td>
+<td>138 words; videos carry no indexable text or VideoObject schema</td>
+<td>Page upgrade</td>
+<td><span class="b low">Low</span></td>
+<td><span class="b med">Moderate</span></td>
+</tr>
+<tr>
+<td><code>/resources/</code> business tools page</td>
+<td>Off-topic affiliate links (Canva, Fiverr, Envato) on a skincare site; 172 words</td>
+<td>Noindex or move</td>
+<td><span class="b low">Low</span></td>
+<td>Quick win</td>
+</tr>
+</tbody></table></div>
+<p>Funnel view: awareness has 5 dated posts, consideration has none (no comparisons or reviews), and decision pages exist but lack schema, reviews and first-hand copy.</p>
+<h2 id="competitor-comparison">Competitor comparison</h2>
+<p>At Domain Rating 31, the site matches the content peers that rank for microchanneling queries and is far behind the brand sites, which is why the plan targets Procell and microchanneling first. No competitors were supplied, so these were taken from live search results for the target queries on 16 Nov 2026.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Role</th>
+<th>Domain Rating (Ahrefs)</th>
+<th>Seen ranking for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>angeliesmith.com</td>
+<td>This site</td>
+<td>31</td>
+<td>Not seen in the sampled results</td>
+</tr>
+<tr>
+<td><a href="https://azulbeauty.com/have-you-heard-of-microchanneling-its-even-better-than-microneedling/">azulbeauty.com</a></td>
+<td>Med-spa blog, content peer</td>
+<td>33</td>
+<td>microchanneling vs microneedling; products to combine with microchanneling</td>
+</tr>
+<tr>
+<td><a href="https://browandbeautybar.com/blog/how-to-take-care-of-your-skin-after-procell-microchanneling-therapy">browandbeautybar.com</a></td>
+<td>Clinic blog, content peer</td>
+<td>30</td>
+<td>Procell aftercare</td>
+</tr>
+<tr>
+<td><a href="https://medpurchasing.com/product/md-aftercare-step-2-healing-accelerator/">medpurchasing.com</a></td>
+<td>Procell reseller, retail peer</td>
+<td>5</td>
+<td>Procell MD aftercare product queries</td>
+</tr>
+<tr>
+<td><a href="https://jaepakmd.com/resources/microchanneling-vs-microneedling-whats-better-for-hair-loss/">jaepakmd.com</a></td>
+<td>Hair clinic</td>
+<td>Not checked</td>
+<td>microchanneling vs microneedling for hair loss</td>
+</tr>
+<tr>
+<td>procelltherapies.com</td>
+<td>Brand site</td>
+<td>74</td>
+<td>Procell brand terms</td>
+</tr>
+<tr>
+<td>obagi.com</td>
+<td>Brand site</td>
+<td>74</td>
+<td>Obagi product terms</td>
+</tr>
+<tr>
+<td>prolonlife.com</td>
+<td>Brand site</td>
+<td>70</td>
+<td>Prolon and fasting mimicking diet terms</td>
+</tr>
+<tr>
+<td>dermstore.com</td>
+<td>Large retailer</td>
+<td>78</td>
+<td>Obagi product terms</td>
+</tr>
+</tbody></table></div>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>angeliesmith.com</th>
+<th>Content peers (DR 30–33)</th>
+<th>Winner</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Authority</td>
+<td>DR 31</td>
+<td>DR 30–33</td>
+<td>Even</td>
+</tr>
+<tr>
+<td>Publishing</td>
+<td>5 posts, none since Mar 2025</td>
+<td>Ranking with single clinic posts</td>
+<td>Open</td>
+</tr>
+<tr>
+<td>Commercial fit</td>
+<td>Sells the Procell aftercare and serums the queries are about</td>
+<td>Clinics selling treatments, not products</td>
+<td>angeliesmith.com</td>
+</tr>
+<tr>
+<td>Author credentials</td>
+<td>Licensed nurse, certifications page, but not shown on posts</td>
+<td>Clinic practitioners</td>
+<td>Peers, until bios are added</td>
+</tr>
+<tr>
+<td>Rich results</td>
+<td>No Product, Article or FAQ schema</td>
+<td>Not audited</td>
+<td>Unknown</td>
+</tr>
+</tbody></table></div>
+<p>A reseller with Domain Rating 5 appears for Procell product queries, so these terms are winnable with correct product markup and stronger pages. Keyword counts, backlink profiles and SERP-feature ownership need a paid Ahrefs or Semrush plan.</p>
+<h2 id="method-and-limits">Method and limits</h2>
+<ul>
+<li><strong>Crawled:</strong> all 81 URLs in the Yoast sitemap index on 16 Nov 2026, plus status checks on 337 internal and external links found in them.</li>
+<li><strong>Measured:</strong> titles, descriptions, headings, canonicals, robots tags, JSON-LD types, word counts, image alt text and internal links per page; load metrics from one headless Chromium run per template.</li>
+<li><strong>Authority:</strong> Ahrefs free Domain Rating lookup.</li>
+<li><strong>Not available:</strong> Semrush (no API units left), Ahrefs Site and Keywords Explorer (free plan), SEO Gets (site is on the free tier, so no Search Console data), Google PageSpeed Insights (shared quota exhausted). Rankings, traffic, search volumes, backlink detail and Core Web Vitals field data are therefore missing.</li>
+<li><strong>Not checked:</strong> Google index coverage, manual actions, and competitor on-page quality.</li>
+<li><strong>Platform:</strong> WordPress with WooCommerce and Yoast SEO, PHP 8.2, served through Hostinger&#39;s CDN. Fixes are made in WordPress admin.</li>
+</ul>
+<footer>Audit run 16 Nov 2026 · lab measurements and public data only</footer></main></body></html>
